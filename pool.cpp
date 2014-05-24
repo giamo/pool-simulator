@@ -4,7 +4,7 @@
 #include <math.h>
 #include <string>
 #include "vector.h"
-#include "palla.h"
+#include "ball.h"
 #include "texture.h"
 
 #define rad 0.017453292519943;
@@ -32,7 +32,7 @@ float line_angle, stecca_angle, tiro_x = 0, tiro_z = 0, angle;
 
 int tiro = 0, laterale = 0, istruzioni = 0;
 
-char str[20] = "POTENZA = ";
+char str[20] = "POWER = ";
 
 GLUquadricObj *quadratic;
 
@@ -441,7 +441,7 @@ void draw()
 		glPopMatrix();
 	}
 
-	sprintf(&str[10], "%0.f", pot);
+	sprintf(&str[8], "%0.f", pot);
 	stampa(strx, stry, strz, str);
 	stampabarra(strx, stry, strz);
 
@@ -467,21 +467,21 @@ void draw()
 	if (j <= 1) {
 		tiro = 1;
 		if (!laterale) {
-			stampa(0, 1, 3, "PARTITA FINITA! PREMI Q O ESC PER USCIRE");
+			stampa(0, 1, 3, "THE GAME IS OVER! PRESS Q OR ESC TO QUIT");
 		}
 	}
 	//stampa istruzioni
 	if(istruzioni) {
 		glColor3f(1, 0, 0);
 		if (!laterale) {
-			stampa(-4, 1, 1, "ISTRUZIONI");
+			stampa(-4, 1, 1, "INSTRUCTIONS");
 			stampa(-3.95, 1, 1, "___________");
-			stampa(-3, 1, 3, "+/-: aumenta/diminuisce la potenza");
-			stampa(-2.2, 1, 3, "z/x: aumenta/diminuisce l'angolo di tiro (a/s: angolo +/- 90°)");
-			stampa(-1.4, 1, 3, "SPACE: effettua il tiro");
-			stampa(-0.6, 1, 3, "v: cambia visuale da alta a laterale e viceversa");
-			stampa(0.2, 1, 3, "i: visualizza/nasconde istruzioni");
-			stampa(1, 1, 3, "q, ESC: esci");
+			stampa(-3, 1, 3, "+/-: increase/decrease shot's power");
+			stampa(-2.2, 1, 3, "z/x: increase/decrease shot's angle (a/s: angle +/- 90°)");
+			stampa(-1.4, 1, 3, "SPACE: shoot!");
+			stampa(-0.6, 1, 3, "v: switch from high and lateral camera");
+			stampa(0.2, 1, 3, "i: show/hide instructions");
+			stampa(1, 1, 3, "q, ESC: quit");
 		}
 	}
 	
@@ -558,42 +558,42 @@ void initGL(int width, int height)
 	
 	//caricamento delle texture
 	if (!p[1].LoadTextureTGA("immagini/1gialla.tga")) {
-		printf("Errore nel caricamento della texture 1gialla, uscita in corso...\n");
+		printf("An error occured while loading texture 1gialla, aborting...\n");
 		exit(0);
 	}
 
 	if (!p[2].LoadTextureTGA("immagini/3rossa.tga")) {
-		printf("Errore nel caricamento della texture 3rossa, uscita in corso...\n");
+		printf("An error occured while loading texture 3rossa, aborting...\n");
 		exit(0);
 	}
 
 	if (!p[3].LoadTextureTGA("immagini/5arancione.tga")) {
-		printf("Errore nel caricamento della texture 5arancione, uscita in corso...\n");
+		printf("An error occured while loading texture 5arancione, aborting...\n");
 		exit(0);
 	}
 
 	if (!p[4].LoadTextureTGA("immagini/6verde.tga")) {
-		printf("Errore nel caricamento della texture 6verde, uscita in corso...\n");
+		printf("An error occured while loading texture 6verde, aborting...\n");
 		exit(0);
 	}
 
 	if (!p[5].LoadTextureTGA("immagini/8nera.tga")) {
-		printf("Errore nel caricamento della texture 8nera, uscita in corso...\n");
+		printf("An error occured while loading texture 8nera, aborting...\n");
 		exit(0);
 	}
 
 	if (!p[6].LoadTextureTGA("immagini/10azzurra.tga")) {
-		printf("Errore nel caricamento della texture 10azzurra, uscita in corso...\n");
+		printf("An error occured while loading texture 10azzurra, aborting...\n");
 		exit(0);
 	}
 
 	if (!p[7].LoadTextureTGA("immagini/12blu.tga")) {
-		printf("Errore nel caricamento della texture 12blu, uscita in corso...\n");
+		printf("An error occured while loading texture 12blu, aborting...\n");
 		exit(0);
 	}
 
 	if (!p[8].LoadTextureTGA("immagini/13arancione.tga")) {
-		printf("Errore nel caricamento della texture 13arancione, uscita in corso...\n");
+		printf("An error occured while loading texture 13arancione, aborting...\n");
 		exit(0);
 	}
 

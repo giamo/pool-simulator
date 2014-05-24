@@ -1,11 +1,11 @@
-OBJS = biliardo.o
+OBJS = pool.o
 FLAGS = -lGL -lGLU -lglut
 
-biliardo: $(OBJS)
-	g++ $(FLAGS) $(OBJS) -o biliardo
+pool: $(OBJS)
+	g++ $(OBJS) -o pool $(FLAGS)
 
-biliardo.o: biliardo.cpp palla.h vector.h texture.h
-	g++ -c biliardo.cpp
+pool.o: pool.cpp ball.h vector.h texture.h
+	g++ -c pool.cpp
 
 clean:
-	rm -f ~.* *.o biliardo
+	rm -f ~.* *.o pool
