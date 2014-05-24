@@ -15,9 +15,9 @@ OpenGL and GLUT libraries are required to compile the project.
 Game istructions
 -----------------
 
-"+/-": increase/decrease shot's power
-"z/x": increase/decrease shot's angle ("a/s": angle +/- 90°)
-"SPACE": shoot!
-"v": switch from high and lateral camera
-"i": show/hide instructions
-"q, ESC": quit the game
+- "+/-": increase/decrease shot's power
+- "z/x": increase/decrease shot's angle ("a/s": angle +/- 90°)
+- "SPACE": shoot!
+- "v": switch from high and lateral camera
+- "i": show/hide instructions
+- "q, ESC": quit the game
